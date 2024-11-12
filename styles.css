@@ -4,6 +4,15 @@ body {
     padding: 0;
     background-color: rgb(9, 6, 18);
     color: white;
+    background-image: url(./sergio-zhukov-GZyXnyOeC-o-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
@@ -91,15 +100,169 @@ header nav .search-bar .search-icon:hover {
 
 main {
     padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./sergio-zhukov-GZyXnyOeC-o-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: calc(100vh - 60px); /* Adjust to span the whole viewport */
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px; /* Add margin to move the boxes down */
 }
 
 main section {
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px; /* Increase the distance between the boxes */
+    flex: 1 1 calc(45% - 40px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+    height: calc(60vh - 160px); /* Increase the height of the boxes */
+}
+
+main section:hover {
+    transform: scale(1.1);
 }
 
 footer {
-    background-color: #222;
+    background-color: #222; /* Same color as the header */
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 0; /* Remove padding */
+    width: 100%;
+    margin-top: auto;
+    border-radius: 0; /* Remove border radius */
+}
+
+footer form {
+    background: rgba(0, 0, 0, 0.7); /* Make the form opaque */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer form label {
+    margin-bottom: 5px;
+}
+
+footer form input,
+footer form textarea {
+    width: 80%; /* Make the input boxes' width lesser */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer form .subm {
+    align-self: center;
+    padding: 10px 20px;
+}
+
+.subm {
+    background-color: rgb(13, 165, 225);
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav .nav-center {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    header nav .nav-center ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    header nav ul li button {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main section {
+        flex: 1 1 100%;
+        height: auto; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav .nav-center {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    header nav .nav-center ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    header nav ul li button {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main section {
+        flex: 1 1 100%;
+        height: auto; /* Adjust height for smaller screens */
+    }
 }

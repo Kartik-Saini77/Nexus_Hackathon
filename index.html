@@ -9,7 +9,9 @@
 <body>
     <header>
         <nav>
-            <div class="logo">CoderArmy</div>
+            <div class="logo">
+                <img src="download.jpeg" alt="CoderArmy Logo" style="height: 50px;">
+            </div>
             <div class="nav-center">
                 <ul>
                     <li><button onclick="location.href='#home'">Home</button></li>
@@ -26,22 +28,29 @@
     </header>
 
     <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>Welcome to CoderArmy. This is the home section.</p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>Learn more about CoderArmy in this section.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Get in touch with us through this section.</p>
-        </section>
+        <h2 style="align-self: flex-start;">Main Sections</h2>
+        <div class="main-content">
+            <section id="home">
+                <h3>Home</h3>
+                <p>Welcome to CoderArmy. This is the home section.</p>
+            </section>
+            <section id="about">
+                <h3>About</h3>
+                <p>Learn more about CoderArmy in this section.</p>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2023 CoderArmy. All rights reserved.</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="give your name" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone No" required>
+            <label for="enquiry">Enquiry:</label>
+            <textarea id="enquiry" name="enquiry" rows="4" required></textarea>
+            <button class="subm">submit</button>
+        </form>
     </footer>
 </body>
 </html>
