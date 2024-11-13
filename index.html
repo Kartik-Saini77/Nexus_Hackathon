@@ -10,14 +10,14 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="download.jpeg" alt="CoderArmy Logo" style="height: 50px;">
+                <img src="download.jpeg" alt="Logo" class="logo-img">
             </div>
             <div class="nav-center">
                 <ul>
-                    <li><button onclick="location.href='#home'">Home</button></li>
-                    <li><button onclick="location.href='#contact'">Contact</button></li>
-                    <li><button onclick="location.href='#portfolio'">Portfolio</button></li>
-                    <li><button onclick="location.href='#services'">Services</button></li>
+                    <li><button onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' });">Home</button></li>
+                    <li><button onclick="document.getElementById('aboutme').scrollIntoView({ behavior: 'smooth' });">About Me</button></li>
+                    <li><button onclick="document.getElementById('timeline').scrollIntoView({ behavior: 'smooth' });">Timeline</button></li>
+                    <li><button onclick="document.getElementById('contactme').scrollIntoView({ behavior: 'smooth' });">Contact Me</button></li>
                 </ul>
             </div>
             <div class="search-bar">
@@ -28,20 +28,45 @@
     </header>
 
     <main>
-        <h2 style="align-self: flex-start;">Main Sections</h2>
         <div class="main-content">
             <section id="home">
-                <h3>Home</h3>
-                <p>Welcome to CoderArmy. This is the home section.</p>
+                <h2 class="main-title">Home</h2>
+                <div class="card-container">
+                    <div class="card card-left">
+                        <img src="./download.jpeg" alt="image" class="card-img">
+                    </div>
+                    <div class="card card-right">
+                        <p>Hey, I'm Divyanshu Joshi. Here, you can check out what I'm working on. I try my best to create things with ❤</p>
+                        <p>Feel free to reach out to me if you have any queries or just want to say hi.</p>
+                    </div>
+                </div>
             </section>
-            <section id="about">
-                <h3>About</h3>
-                <p>Learn more about CoderArmy in this section.</p>
+            <section id="aboutme">
+                <h3 class="main-title">About Me</h3>
+                <div class="Box-container">
+                    <div class="Box">
+                        <p>Welcome to CoderArmy. This is the home section.</p>
+                    </div>
+                    <div class="Box">
+                        <p>Learn more about CoderArmy in this section.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="timeline">
+                <h4 class="main-title">Timeline</h4>
+                <div class="Box-container">
+                    <div class="Box">
+                        <p>Timeline event 1.</p>
+                    </div>
+                    <div class="Box">
+                        <p>Timeline event 2.</p>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
-    <footer>
+    <footer id="contactme">
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="give your name" required>
@@ -49,7 +74,7 @@
             <input type="tel" id="phone" name="phone" placeholder="Enter your phone No" required>
             <label for="enquiry">Enquiry:</label>
             <textarea id="enquiry" name="enquiry" rows="4" required></textarea>
-            <button class="subm">submit</button>
+            <button class="subm">Submit</button>
         </form>
     </footer>
 </body>

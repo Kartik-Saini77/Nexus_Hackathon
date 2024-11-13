@@ -1,18 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: rgb(9, 6, 18);
+}
+
+body {
+    font-family: Arial, sans-serif;
     color: white;
-    background-image: url(./sergio-zhukov-GZyXnyOeC-o-unsplash.jpg);
-    background-repeat: no-repeat;
+    /* background-color: #0e071d; */
+    /* background-color: orange; */
+    background-image: url(./background_compressed.jpg);
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    /* background-position: center; */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 header {
@@ -28,10 +32,6 @@ header nav {
     padding: 0 20px;
 }
 
-header nav .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
 
 header nav .nav-center {
     display: flex;
@@ -41,8 +41,6 @@ header nav .nav-center {
 
 header nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
 }
 
@@ -50,12 +48,7 @@ header nav ul li {
     margin-left: 20px;
 }
 
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-header nav ul li button {
+header nav ul li button {  /* to do */
     background-color: #444;
     color: white;
     border: none;
@@ -65,23 +58,23 @@ header nav ul li button {
     transition: background-color 0.3s;
 }
 
-header nav ul li button:hover {
+header nav ul li button:hover {  /* to do */
     background-color: #666;
 }
 
-header nav .search-bar {
+header nav .search-bar {  /* to do */
     display: flex;
     align-items: center;
 }
 
-header nav .search-bar input {
+header nav .search-bar input {  /* to do */
     padding: 5px;
     border: none;
     border-radius: 5px;
     margin-right: 5px;
 }
 
-header nav .search-bar .search-icon {
+header nav .search-bar .search-icon {  /* to do */
     background-color: #444;
     color: white;
     border: none;
@@ -94,39 +87,49 @@ header nav .search-bar .search-icon {
     justify-content: center;
 }
 
-header nav .search-bar .search-icon:hover {
+header nav .search-bar .search-icon:hover {  /* to do */
     background-color: #666;
 }
 
 main {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url(./sergio-zhukov-GZyXnyOeC-o-unsplash.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: calc(100vh - 60px); /* Adjust to span the whole viewport */
-}
+    flex-direction: column;  /* ???? */
+    align-items: center;    /* ???? */
+    justify-content: center;    /* ???? */
+    /* background-image: url(./background_compressed.jpg); */
+    /* background-size: cover;
+    /* background-position: center; */
+    /* min-height: calc(100vh - 60px); */
+} */
 
 .main-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
     width: 100%;
-    margin-top: 20px; /* Add margin to move the boxes down */
+    margin-top: 20px;
 }
 
-main section {
+.main-content section {
+    display: flex;
+    flex-direction: column; /* Ensure cards are below the heading */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px; /* Add margin between sections */
+}
+
+.Box-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Box {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
-    margin: 20px; /* Increase the distance between the boxes */
+    margin: 20px;
     flex: 1 1 calc(45% - 40px);
     box-sizing: border-box;
     display: flex;
@@ -134,27 +137,67 @@ main section {
     align-items: center;
     text-align: center;
     transition: transform 0.3s;
-    height: calc(60vh - 160px); /* Increase the height of the boxes */
+    height: calc(60vh - 160px);
 }
 
-main section:hover {
+.Box:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card {
+    width: 48%; /* Adjust width to fit within the container */
+    height: calc(100vh - 180px); /* Increase height to cover viewport along with header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin between cards */
+}
+
+.card-left {
+    animation: slideInFromLeft 1s ease-out;
+    margin-right: 2%; /* Add margin to the right */
+}
+
+.card-right {
+    animation: slideInFromRight 1s ease-out;
+    background-color: rgba(11, 10, 10, 0);
+    font-family: 'Georgia', serif; /* Change the font */
+    font-size: 1.5em; /* Make the font size bigger */
+    font-weight: bolder;
+    text-align: center;
+    margin-left: 2%; /* Add margin to the left */
+    display: flex;
+    flex-direction: column; /* Ensure paragraphs are stacked vertically */
+    justify-content: center;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 footer {
-    background-color: #222; /* Same color as the header */
+    background-color: #222;
     color: white;
     text-align: center;
-    padding: 0; /* Remove padding */
+    padding: 0;
     width: 100%;
     margin-top: auto;
-    border-radius: 0; /* Remove border radius */
+    border-radius: 0;
 }
 
 footer form {
-    background: rgba(0, 0, 0, 0.7); /* Make the form opaque */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -164,9 +207,8 @@ footer form label {
     margin-bottom: 5px;
 }
 
-footer form input,
-footer form textarea {
-    width: 80%; /* Make the input boxes' width lesser */
+footer form input, footer form textarea {
+    width: 80%;
     padding: 10px;
     margin-bottom: 15px;
     border: none;
@@ -186,7 +228,6 @@ footer form .subm {
     cursor: pointer;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     header nav {
         flex-direction: column;
@@ -221,9 +262,31 @@ footer form .subm {
         align-items: center;
     }
 
-    main section {
+    .Box {
         flex: 1 1 100%;
-        height: auto; /* Adjust height for smaller screens */
+        height: auto;
+    }
+
+    .Box-container {
+        flex-direction: column; /* Move boxes to different lines */
+    }
+
+    .card-container {
+        flex-direction: column; /* Move cards to different lines */
+    }
+
+    .card {
+        width: 100%; /* Make cards full width on mobile */
+        margin-right: 0;
+        margin-bottom: 20px; /* Add margin between cards */
+        height: 300px; /* Keep height the same for mobile */
+    }
+
+    .b {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+        font-weight: normal;
+        max-height: none; /* Remove maximum height */
+        overflow-y: visible; /* Remove scroll */
     }
 }
 
@@ -261,8 +324,81 @@ footer form .subm {
         align-items: center;
     }
 
-    main section {
+    .Box {
         flex: 1 1 100%;
-        height: auto; /* Adjust height for smaller screens */
+        height: auto;
+    }
+
+    .Box-container {
+        flex-direction: column; /* Move boxes to different lines */
+    }
+
+    .card-container {
+        flex-direction: column; /* Move cards to different lines */
+    }
+
+    .card {
+        width: 100%; /* Make cards full width on mobile */
+        margin-right: 0;
+        margin-bottom: 20px; /* Add margin between cards */
+        height: 300px; /* Keep height the same for mobile */
+    }
+
+    .b {
+        font-size: 1em; /* Adjust font size for smaller screens */
+        font-weight: normal;
+        max-height: none; /* Remove maximum height */
+        overflow-y: visible; /* Remove scroll */
     }
 }
+
+/* Add animations for the image cards to appear from the left and right sides on loading */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.card-left {
+    animation: slideInFromLeft 1s ease-out;
+    margin-right: 2%; /* Add margin to the right */
+}
+
+.card-right {
+    animation: slideInFromRight 1s ease-out;
+    background-color: rgba(11, 10, 10, 0);
+    font-family: 'Georgia', serif; /* Change the font */
+    font-size: 1.5em; /* Make the font size bigger */
+    font-weight: bolder;
+    text-align: center;
+    margin-left: 2%; /* Add margin to the left */
+    display: flex;
+    flex-direction: column; /* Ensure paragraphs are stacked vertically */
+    justify-content: center;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.main-title {
+    align-self: flex-start;
+    margin-bottom: 20px; /* Increase distance between heading and cards */
+}
+
