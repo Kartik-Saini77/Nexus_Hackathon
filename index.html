@@ -9,8 +9,15 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <img src="download.jpeg" alt="Logo" class="logo-img">
+            <div class="header-content">
+                <button class="hamburger-menu" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <div class="logo">
+                    <img src="download.jpeg" alt="Logo" class="logo-img">
+                </div>
             </div>
             <div class="nav-center">
                 <ul>
@@ -20,9 +27,15 @@
                     <li><button onclick="document.getElementById('contactme').scrollIntoView({ behavior: 'smooth' });">Contact Me</button></li>
                 </ul>
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <button class="search-icon">🔍</button>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#home" onclick="toggleMenu()">Home</a>
+                <a href="#aboutme" onclick="toggleMenu()">About Me</a>
+                <a href="#timeline" onclick="toggleMenu()">Timeline</a>
+                <a href="#contactme" onclick="toggleMenu()">Contact Me</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button class="search-icon">🔍</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -77,5 +90,13 @@
             <button class="subm">Submit</button>
         </form>
     </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            const hamburger = document.querySelector('.hamburger-menu');
+            menu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
