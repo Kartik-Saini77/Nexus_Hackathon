@@ -6,56 +6,52 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body  id="home">
     <header>
         <nav>
             <div class="header-content">
-                <button class="hamburger-menu" onclick="toggleMenu()">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </button>
+                <div class="hamburger-menu">
+                    <img src="burger-menu-left-svgrepo-com.svg" alt="Menu" width="40" height="40" style="filter: invert(1);">
+                </div>
                 <div class="logo">
-                    <img src="download.jpeg" alt="Logo" class="logo-img">
+                    <img src="./dj'.jpg" alt="Logo" class="logo-img">
+                </div>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#home">Home</a>
+                    <a href="#aboutme">About Me</a>
+                    <a href="#timeline">Timeline</a>
+                    <a href="#contactme">Contact Me</a>
                 </div>
             </div>
             <div class="nav-center">
                 <ul>
-                    <li><button onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' });">Home</button></li>
-                    <li><button onclick="document.getElementById('aboutme').scrollIntoView({ behavior: 'smooth' });">About Me</button></li>
-                    <li><button onclick="document.getElementById('timeline').scrollIntoView({ behavior: 'smooth' });">Timeline</button></li>
-                    <li><button onclick="document.getElementById('contactme').scrollIntoView({ behavior: 'smooth' });">Contact Me</button></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#aboutme">About Me</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#contactme">Contact Me</a></li>
                 </ul>
-            </div>
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#home" onclick="toggleMenu()">Home</a>
-                <a href="#aboutme" onclick="toggleMenu()">About Me</a>
-                <a href="#timeline" onclick="toggleMenu()">Timeline</a>
-                <a href="#contactme" onclick="toggleMenu()">Contact Me</a>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search...">
-                    <button class="search-icon">🔍</button>
-                </div>
             </div>
         </nav>
     </header>
 
     <main>
         <div class="main-content">
-            <section id="home">
-                <h2 class="main-title">Home</h2>
+            <section>
+                <h1 class="main-title">Home</h1>
                 <div class="card-container">
                     <div class="card card-left">
-                        <img src="./download.jpeg" alt="image" class="card-img">
+                        <img src="./WhatsApp Image 2024-11-15 at 14.33.04_6d96f1e9_crop.jpg" alt="" class="card-img">
+                        <img src="./WhatsApp Image 2024-11-15 at 14.32.56_542d557b.jpg" alt="image" class="card-img">
                     </div>
                     <div class="card card-right">
-                        <p>Hey, I'm Divyanshu Joshi. Here, you can check out what I'm working on. I try my best to create things with ❤</p>
-                        <p>Feel free to reach out to me if you have any queries or just want to say hi.</p>
+                        <p class="para1">Hey, I'm Divyanshu Joshi.</p>
+                        <br>
+                        <p class="para2"> Here, you can check out what I'm working on. I try my best to create things with ❤</p>
                     </div>
                 </div>
             </section>
             <section id="aboutme">
-                <h3 class="main-title">About Me</h3>
+                <h2 class="main-title">About Me</h2>
                 <div class="Box-container">
                     <div class="Box">
                         <p>Welcome to CoderArmy. This is the home section.</p>
@@ -66,7 +62,7 @@
                 </div>
             </section>
             <section id="timeline">
-                <h4 class="main-title">Timeline</h4>
+                <h3 class="main-title">Timeline</h3>
                 <div class="Box-container">
                     <div class="Box">
                         <p>Timeline event 1.</p>
@@ -80,23 +76,34 @@
     </main>
 
     <footer id="contactme">
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="give your name" required>
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone No" required>
-            <label for="enquiry">Enquiry:</label>
-            <textarea id="enquiry" name="enquiry" rows="4" required></textarea>
-            <button class="subm">Submit</button>
-        </form>
+        <div class="foot">
+            <form>
+                <div class="heading">
+                    <h4>Contact Me</h4>
+                </div>
+                <div class="forma">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Mobile:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone No" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enquiry">Enquiry:</label>
+                        <textarea id="enquiry" name="enquiry" rows="4" placeholder="" required></textarea>
+                    </div>
+                    <button class="subm">Submit</button>
+                </div>
+            </form>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/divyanshu-joshi-7b1b3b1b1/"><img src="./linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="./git.png" alt="GitHub"></a>
+                <a href="#"><img src="./instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="./twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
     </footer>
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('dropdownMenu');
-            const hamburger = document.querySelector('.hamburger-menu');
-            menu.classList.toggle('open');
-            hamburger.classList.toggle('open');
-        }
-    </script>
 </body>
 </html>
