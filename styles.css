@@ -5,13 +5,13 @@
 }
 
 html {
-    scroll-behavior: smooth;                     /* review */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
     color: white;
-    background-image: url(./background_compressed.jpg);
+    background-image: url(./Assets/background_compressed.jpg);
     background-size: cover;
     background-attachment: fixed;
     display: flex;
@@ -23,7 +23,6 @@ body {
 header {
     background-color: #222;
     color: white;
-    /* padding: 20px; */
     height: 90px;
     display: flex;
     align-items: center;
@@ -70,37 +69,11 @@ header nav ul li a {
     padding: 10px;
     padding-bottom: 10px;
     cursor: pointer;
-    /* border-radius: 5px; */
     transition: background-color 0.3s;
     display: inline-block;
     width: 120px;
     text-align: center;
     position: relative;
-}
-
-.bar {
-    background-color: rgb(16, 161, 190);
-    margin-left: 100px;
-    z-index: 1;
-    height: 25px;
-}
-
-.right-semi-ring{
-    height: 200px;
-    width: 100px;  
-    z-index: 0;
-    border: 25px solid rgb(16, 161, 190);
-    border-radius: 0px 100px 100px 0px;
-    border-left: 0px;
-}
-
-.left-semi-ring{
-    height: 200px;
-    width: 100px;  
-    z-index: 0;
-    border: 25px solid rgb(16, 161, 190);
-    border-radius: 100px 0px 0px 100px;
-    border-right: 0px;
 }
 
 #timeline .timeline-box {
@@ -187,9 +160,9 @@ main {
     padding: 20px;
     flex-grow: 1;
     display: flex;
-    flex-direction: column;  /* ???? */
-    align-items: center;    /* ???? */
-    justify-content: center;    /* ???? */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-content {
@@ -319,17 +292,8 @@ h5 {
 }
 
 #timeline {
-    animation: slideInFromRight 1s ease-out;
+    animation: fadeInRight 1s ease-out;
 }
-
-/* .card-img {
-    margin: 2px;
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    background-size: cover;
-    border-radius: 20px;
-} */
 
 .card-img-left {
     margin: 2px;
@@ -543,6 +507,7 @@ footer form .subm {
 
     .card-right {
         height: 200px;
+        margin-top: 30px;
     }
 
     .b {
@@ -577,15 +542,15 @@ footer form .subm {
 
     #timeline .timeline-box .box {
         flex-direction: column;
-        max-width: 80vw; /* Decrease width for mobile */
+        max-width: 80vw;
         text-align: center;
         padding: 30px;
-        transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effects */
+        transition: transform 0.3s, box-shadow 0.3s;
     }
 
     #timeline .timeline-box .box:hover {
-        transform: scale(1.06); /* Add hover effect */
-        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+        transform: scale(1.06);
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
     }
 
     #timeline .timeline-box .box img {
@@ -603,9 +568,9 @@ footer form .subm {
     #timeline .timeline-box .box-text {
         margin-top: 10px;
         font-size: 1.2em;
-        text-align: center; /* Center align text */
-        margin-left: 10px; /* Add margin from the left */
-        margin-right: 10px; /* Add margin from the right */
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -678,6 +643,7 @@ footer form .subm {
 
     .card-right {
         height: 200px;
+        margin-top: 30px;
     }
 
     .b {
@@ -709,9 +675,9 @@ footer form .subm {
     #timeline .timeline-box .box-text {
         margin-top: 10px;
         font-size: 1.2em;
-        text-align: center; /* Center align text */
-        margin-left: 10px; /* Add margin from the left */
-        margin-right: 10px; /* Add margin from the right */
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -727,21 +693,21 @@ footer form .subm {
         border-radius: 10px;
         padding: 20px;
         max-width: 50vw;
-        transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effects */
+        transition: transform 0.3s, box-shadow 0.3s;
     }
 
     #timeline .timeline-box .box:nth-child(odd) {
-        margin-left: 10%; /* Bring odd boxes towards the middle */
+        margin-left: 10%;
     }
 
     #timeline .timeline-box .box:nth-child(even) {
-        margin-left: auto; /* Align even boxes to the right */
-        margin-right: 10%; /* Bring even boxes towards the middle */
+        margin-left: auto;
+        margin-right: 10%;
     }
 
     #timeline .timeline-box .box:hover {
-        transform: scale(1.06); /* Add hover effect */
-        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+        transform: scale(1.06);
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
     }
 
     #timeline .timeline-box .box img {
@@ -763,7 +729,6 @@ footer form .subm {
     }
 }
 
-/* Animations */
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);
@@ -783,6 +748,17 @@ footer form .subm {
     100% {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -807,8 +783,7 @@ footer form .form-group label {
     width: 100px;
 }
 
-footer form .form-group input,
-footer form .form-group textarea {
+footer form .form-group input, footer form .form-group textarea {
     flex-grow: 1;
     width: 30vw;
     margin-top: 15px;
